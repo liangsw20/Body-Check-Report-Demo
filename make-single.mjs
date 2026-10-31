@@ -13,4 +13,6 @@ const single = html
   .replace('<script src="./assets/app.js" defer></script>', () => `<script>\n${js}\n</script>`)
 
 await writeFile('dist/微循原型.html', single)
-console.log(`Built dist/微循原型.html (${(Buffer.byteLength(single) / 1024 / 1024).toFixed(2)} MB)`)
+await writeFile('微循原型.html', single)
+await writeFile('index.html', single)
+console.log(`Built dist/微循原型.html, 微循原型.html, and GitHub Pages index.html (${(Buffer.byteLength(single) / 1024 / 1024).toFixed(2)} MB)`)

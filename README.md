@@ -42,14 +42,15 @@ npm run dev
 其他命令：
 
 ```bash
-npm run build      # 重新构建 dist，并生成单文件版
-npm run single     # 只重新生成 dist/微循原型.html
+npm run build      # 重新构建 dist、根目录 index.html 和单文件版
+npm run single     # 只重新生成单文件与 GitHub Pages 入口
 npm run preview    # 预览已构建的 dist
 npm run typecheck  # TypeScript 类型检查
 ```
 
 ### 交付物
 
+- `index.html`：GitHub Pages 使用的单文件入口，由构建生成；
 - `微循原型.html`：根目录单文件版，直接双击或发给别人；
 - `微循原型-单文件.zip`：适合通过微信 / 邮件发送的压缩包；
 - `dist/微循原型.html`：构建目录中的单文件版；
@@ -57,24 +58,27 @@ npm run typecheck  # TypeScript 类型检查
 - `患者报告示例.pdf`：由页面打印样式生成的两页患者版报告样例；
 - `screenshots/`：桌面、平板、手机、报告和部位详情的最终截图。
 
+> `index.html` 和 `微循原型.html` 都是构建产物，源码模板在 `src/index.template.html`，不要直接改这两个构建产物。
+
 ---
 
 ## 变成公网网址
 
-项目是纯静态站点，没有后端依赖，可以部署到任意静态托管。
+### GitHub Pages（已配置）
 
-### 最省事：Netlify Drop
+当前 GitHub Pages 入口：
 
-1. 打开 [app.netlify.com/drop](https://app.netlify.com/drop)；
-2. 把 `dist` 文件夹整个拖进去；
-3. 等待几十秒，得到一个 `https://xxx.netlify.app` 网址；
-4. 任何人点开就能使用，也可以后续绑定自定义域名。
+```text
+https://liangsw20.github.io/Body-Check-Report-Demo/
+```
+
+仓库的根目录 `index.html` 是内联 CSS/JS 的单文件版本，GitHub Pages 直接打开即可，不需要构建服务器。
 
 ### 其他选择
 
+- **Netlify Drop**：把 `dist` 文件夹拖到 [app.netlify.com/drop](https://app.netlify.com/drop)；
 - **Vercel**：导入 Git 仓库，自动构建和发布；
 - **Cloudflare Pages**：上传 `dist`，国内访问通常更稳定；
-- **GitHub Pages**：把 `dist` 发布到 Pages；
 - **医院内网**：把 `dist` 放到 Nginx / IIS 的静态目录，仅内网访问。
 
 > 公网演示只能使用演示数据，不要上传真实患者信息。正式上线需要增加登录、脱敏、审计与隐私合规。

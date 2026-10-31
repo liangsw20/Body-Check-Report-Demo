@@ -46,7 +46,7 @@ await bundle.close()
 
 await copyFile('src/styles.css', 'dist/assets/styles.css')
 
-const html = await readFile('index.html', 'utf8')
+const html = await readFile('src/index.template.html', 'utf8')
 const outputHtml = html
   .replace('href="/src/styles.css"', 'href="./assets/styles.css"')
   .replace('<script type="module" src="/src/main.tsx"></script>', '<script src="./assets/app.js" defer></script>')
