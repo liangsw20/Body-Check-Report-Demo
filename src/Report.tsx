@@ -5,37 +5,61 @@ import { StatusPill } from './Ui'
 
 function MiniBodyMap({ areas }: { areas: AreaInfo[] }) {
   const byId = Object.fromEntries(areas.map((area) => [area.id, area])) as Record<string, AreaInfo>
+  const toneColor = (tone: string) => (tone === 'good' ? '#2aa58e' : tone === 'watch' ? '#d3a04b' : '#d47861')
+
   return (
     <div className="report-map">
-      <svg viewBox="0 0 280 380" role="img" aria-label="身体风险部位示意图">
+      <svg viewBox="0 0 280 380" role="img" aria-label="全身风险部位示意图">
         <defs>
-          <linearGradient id="report-body" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#eef8f3" />
-            <stop offset="1" stopColor="#c9e9df" />
+          <linearGradient id="report-heart" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor="#ef9a86" />
+            <stop offset="1" stopColor="#c85f4b" />
           </linearGradient>
         </defs>
-        <ellipse cx="140" cy="365" rx="70" ry="8" fill="#9ecfc3" opacity="0.25" />
-        <g fill="url(#report-body)" stroke="#a9d5ca" strokeWidth="1.5">
-          <circle cx="140" cy="45" r="24" />
-          <path d="M125 115C112 119 103 132 99 149L94 205L86 260L82 320L103 322L111 268L117 216L124 190L130 228L128 290L141 292L146 240L154 292L168 290L165 228L171 190L178 216L185 268L193 322L214 320L210 260L202 205L197 149C193 132 184 119 171 115Z" />
-          <path d="M109 133C97 141 90 160 86 182L80 210L94 213L102 184L113 158Z" />
-          <path d="M171 133C183 141 190 160 194 182L200 210L186 213L178 184L167 158Z" />
-          <rect x="126" y="68" width="28" height="32" rx="10" />
+        <ellipse cx="140" cy="366" rx="63" ry="7" fill="#9ecfc3" opacity="0.22" />
+
+        <g fill="#fffefb" stroke="#9cbcb2" strokeWidth="1.1">
+          <path d="M116 238C112 265 110 295 109 320L108 338C107 345 104 350 100 353L122 356L126 338L130 300L136 250Z" />
+          <path d="M164 238C168 265 170 295 171 320L172 338C173 345 176 350 180 353L158 356L154 338L150 300L144 250Z" />
+          <path d="M100 353C91 355 83 360 82 366C81 371 88 374 97 372L123 366L122 353Z" />
+          <path d="M180 353C189 355 197 360 198 366C199 371 192 374 183 372L157 366L158 353Z" />
+          <path d="M102 96C92 108 86 125 82 145L74 185L68 215C66 224 70 230 76 228C82 226 84 218 86 210L94 180L102 150L108 120Z" />
+          <path d="M178 96C188 108 194 125 198 145L206 185L212 215C214 224 210 230 204 228C198 226 196 218 194 210L186 180L178 150L172 120Z" />
+          <path d="M140 82C120 82 106 88 100 98C94 110 92 128 91 145L90 190C89 202 94 212 104 215L116 218L116 240L164 240L164 218L176 215C186 212 191 202 190 190L189 145C188 128 186 110 180 98C174 88 160 82 140 82Z" />
+          <rect x="128" y="63" width="24" height="24" rx="8" />
+          <ellipse cx="140" cy="45" rx="25" ry="29" />
         </g>
-        <g stroke="#2da58f" strokeWidth="1.6" fill="none" opacity="0.7">
-          <path d="M140 117v72M140 190c-14 38-15 70-16 112M140 190c14 38 15 70 16 112M140 145c-12-18-13-38-13-62M140 145c12-18 13-38 13-62" />
+
+        <g fill="#eef4f0" stroke="#b8ccc3" strokeWidth="0.8">
+          <path d="M118 112C107 115 102 126 103 143C104 160 111 171 121 174C128 176 132 170 132 161L131 120C131 112 125 110 118 112Z" />
+          <path d="M162 112C173 115 178 126 177 143C176 160 169 171 159 174C152 176 148 170 148 161L149 120C149 112 155 110 162 112Z" />
         </g>
+        <ellipse cx="140" cy="42" rx="15" ry="10" fill="#f1e9e4" stroke="#c7a99f" strokeWidth="0.7" />
+        <path d="M158 140C152 134 142 138 142 147C142 157 153 162 158 170C163 162 174 157 174 147C174 138 164 134 158 140Z" fill="url(#report-heart)" stroke="#b95f4c" strokeWidth="1" />
+
+        <g fill="none" stroke="#cf6d56" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M158 170C158 160 154 154 150 150L149 120L147 100M158 170C158 185 158 200 154 220L148 260L142 300L138 332" strokeWidth="1.8" />
+          <path d="M151 150L124 148L106 151L92 178L80 211M165 150L186 148L204 151L218 178L230 211" strokeWidth="1.4" />
+          <path d="M149 120C147 108 145 96 146 86M161 120C163 108 165 96 164 86" strokeWidth="1" />
+          <path d="M142 300L132 324L126 342M154 300L160 324L166 342" strokeWidth="1" />
+          <path d="M154 220L127 232L120 245M162 220L183 232L190 245" strokeWidth="1" />
+          <path d="M138 332L128 340M148 330L150 342" strokeWidth="0.8" />
+        </g>
+        <g fill="none" stroke="#6f98ad" strokeLinecap="round" strokeLinejoin="round" opacity="0.75">
+          <path d="M157 168C158 150 158 130 158 110L157 92M157 168C157 188 156 210 154 230L150 270L145 310L141 337" strokeWidth="1.2" />
+          <path d="M157 150L120 155L95 190L83 220M160 150L192 155L216 190L228 220" strokeWidth="0.9" />
+          <path d="M145 310L135 334L130 347M150 320L158 338L162 347" strokeWidth="0.8" />
+        </g>
+
+        <g fill="none" stroke="#e9ded5" strokeWidth="2">
+          <path d="M140 92C130 96 124 110 124 130M140 92C150 96 156 110 156 130" opacity="0.55" />
+        </g>
+
         <g>
-          <circle cx="140" cy="66" r="12" fill={byId.brain.tone === 'good' ? '#2aa58e' : byId.brain.tone === 'watch' ? '#d3a04b' : '#d47861'} opacity="0.92" />
-          <circle cx="157" cy="160" r="10" fill={byId.heart.tone === 'good' ? '#2aa58e' : byId.heart.tone === 'watch' ? '#d3a04b' : '#d47861'} opacity="0.92" />
-          <circle cx="140" cy="212" r="11" fill={byId.blood.tone === 'good' ? '#2aa58e' : byId.blood.tone === 'watch' ? '#d3a04b' : '#d47861'} opacity="0.92" />
-          <circle cx="124" cy="312" r="9" fill={byId.foot.tone === 'good' ? '#2aa58e' : byId.foot.tone === 'watch' ? '#d3a04b' : '#d47861'} opacity="0.92" />
-        </g>
-        <g fontSize="9" fill="#42645f">
-          <text x="170" y="63">脑供氧</text>
-          <text x="184" y="164">心血管</text>
-          <text x="168" y="216">血液</text>
-          <text x="148" y="316">足部</text>
+          <circle cx="140" cy="47" r="8" fill={toneColor(byId.brain.tone)} opacity="0.95" />
+          <circle cx="159" cy="151" r="7" fill={toneColor(byId.heart.tone)} opacity="0.95" />
+          <circle cx="140" cy="198" r="7" fill={toneColor(byId.blood.tone)} opacity="0.95" />
+          <circle cx="124" cy="342" r="6" fill={toneColor(byId.foot.tone)} opacity="0.95" />
         </g>
       </svg>
       <div className="report-map-legend">

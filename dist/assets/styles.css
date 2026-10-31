@@ -848,85 +848,114 @@ summary:focus-visible {
   stroke: inherit;
 }
 
-.body-hand {
-  fill: inherit;
-  stroke: inherit;
+.body-silhouette {
+  pointer-events: none;
 }
 
-.body-foot {
-  fill: inherit;
-  stroke: inherit;
+.body-creases {
+  pointer-events: none;
+}
+
+.organs {
+  pointer-events: none;
+}
+
+.brain-organ > path {
+  fill: #f1e9e4;
+  stroke: #c7a99f;
+  stroke-width: 1;
+}
+
+.brain-organ > g {
+  stroke: #c4a194;
+  stroke-width: 0.75;
+  opacity: 0.78;
+}
+
+.lung-organ > path {
+  fill: #e9f1ed;
+  stroke: #aec7bd;
+  stroke-width: 1.2;
+}
+
+.lung-organ > path[fill="none"] {
+  stroke: #bfa99d;
+  stroke-width: 0.95;
+  opacity: 0.85;
+}
+
+.kidney-organ > path {
+  fill: #f6e6df;
+  stroke: #cfad9f;
+  stroke-width: 1;
+}
+
+.heart-organ {
+  stroke: #b95f4c;
+  stroke-width: 1.5;
+  filter: drop-shadow(0 6px 10px rgba(188, 94, 73, 0.2));
+}
+
+.heart-detail {
+  stroke: #b95f4c;
+  stroke-width: 1.05;
+  opacity: 0.75;
+  stroke-linecap: round;
+}
+
+.venous-system path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.venous-system .vein-main path {
+  stroke-width: 2.65;
+  opacity: 0.9;
+}
+
+.venous-system .vein-branch path {
+  stroke-width: 1.6;
+  opacity: 0.72;
+}
+
+.venous-system .vein-small path {
+  stroke-width: 1;
+  opacity: 0.56;
+}
+
+.arterial-system path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.arterial-system .artery-main-group path {
+  stroke-width: 3.7;
+}
+
+.arterial-system .artery-branch path {
+  stroke-width: 2.45;
+}
+
+.arterial-system .artery-small path {
+  stroke-width: 1.2;
+}
+
+.arterial-system .artery-organ path {
+  stroke-width: 1;
+  opacity: 0.85;
+}
+
+.vessel-flow circle {
+  fill: #c9634f;
+  filter: drop-shadow(0 0 4px rgba(201, 99, 79, 0.8));
 }
 
 .body-highlight {
   pointer-events: none;
 }
 
-.vessel-arteries path {
-  stroke-width: 2.25;
-  stroke-linecap: round;
-  opacity: 0.9;
-}
-
-.heart-organ {
-  filter: drop-shadow(0 6px 10px rgba(188, 94, 73, 0.2));
-}
-
 .arterial-system {
   pointer-events: none;
-}
-
-.vessel-glow path {
-  stroke: #8be4d2;
-  stroke-width: 8;
-  opacity: 0.14;
-}
-
-.arterial-tree path {
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.artery-main {
-  stroke-width: 3.6;
-}
-
-.artery-carotid,
-.artery-subclavian {
-  stroke-width: 2.5;
-}
-
-.artery-arm,
-.artery-leg {
-  stroke-width: 2.8;
-}
-
-.artery-arm-branch,
-.artery-leg-branch {
-  stroke-width: 1.7;
-}
-
-.artery-brain {
-  stroke-width: 1.25;
-  opacity: 0.92;
-}
-
-.artery-hand,
-.artery-foot {
-  stroke-width: 1.15;
-  opacity: 0.9;
-}
-
-.vessel-veins path {
-  stroke-width: 1.4;
-  stroke-dasharray: 3 7;
-  opacity: 0.52;
-  stroke-linecap: round;
-}
-
-.vessel-flow circle {
-  fill: #27ad94;
-  filter: drop-shadow(0 0 4px rgba(35, 168, 146, 0.9));
 }
 
 .body-auras {
