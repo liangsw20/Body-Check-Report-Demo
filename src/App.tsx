@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { getAreas, getOverall, getPatient, patients, toneLabel, toneShortLabel } from './data'
 import type { AreaId, AreaInfo, Patient } from './data'
-import { BodyMap } from './BodyMap'
+import { BodyMap } from './BodyMap.anatomical'
 import { DetailSheet } from './DetailSheet'
 import { Icon } from './Icons'
 import { Report } from './Report'

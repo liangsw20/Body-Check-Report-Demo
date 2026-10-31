@@ -174,7 +174,7 @@ git push
 ```text
 src/
   App.tsx          患者端主页面与上下文
-  BodyMap.tsx      全身风险地图
+  BodyMap.anatomical.tsx  全身风险地图（新版解剖线稿）
   DetailSheet.tsx  部位解读弹层
   Report.tsx       两页患者版报告
   Visuals.tsx      足部 / 脑部 / 血液 / 血压可视化
