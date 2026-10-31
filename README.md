@@ -81,20 +81,26 @@ npm run typecheck  # TypeScript 类型检查
 
 ---
 
-## Git 推送
+## Git 仓库
 
-仓库初始化与本地提交已经完成。推送前请先配置远程仓库：
+项目已推送到 GitHub：
 
-```bash
-git remote add origin <你的仓库地址>
-git push -u origin main
+```text
+https://github.com/liangsw20/Body-Check-Report-Demo
 ```
 
-如果是 GitHub，可以用：
+远程地址（SSH）：
+
+```text
+git@github.com:liangsw20/Body-Check-Report-Demo.git
+```
+
+当前 `main` 已跟踪 `origin/main`，后续更新直接执行：
 
 ```bash
-git remote add origin git@github.com:<用户名>/<仓库名>.git
-git push -u origin main
+git add .
+git commit -m "update prototype"
+git push
 ```
 
 ---
