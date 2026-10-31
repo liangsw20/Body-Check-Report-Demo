@@ -1,0 +1,15 @@
+node_modules/
+.npm-cache/
+.edge-*/
+*.log
+.DS_Store
+qa-*.png
+qa-*.json
+qa-*.mjs
+map-check-*.png
+map-crop.png
+body-crop.png
+tablet-map.png
+mobile-map.png
+single-check.png
+*.zip

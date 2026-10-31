@@ -1,0 +1,30 @@
+{
+  "name": "microflow-patient-prototype",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node build.mjs && node make-single.mjs && node serve.mjs",
+    "build": "node build.mjs && node make-single.mjs",
+    "single": "node make-single.mjs",
+    "preview": "node serve.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.7",
+    "@babel/preset-react": "^7.26.3",
+    "@babel/preset-typescript": "^7.26.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^15.3.1",
+    "@rollup/plugin-replace": "^6.0.2",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "rollup": "^4.34.8",
+    "typescript": "5.6.3"
+  }
+}
